@@ -15,6 +15,7 @@
    window.addEventListener('message', (event) => {
     if (event.data.type === authCodeResponse.type && event.data.data?.code) {
      console.log('code', event.data.data.code)
+
      redirectByCode(event.data.data.code)
     } else if (event.data.type === authCodeError.type) {
      const errorText = 'Ошибка авторизации: ' + (event.data.error?.message || 'Неизвестная ошибка')
@@ -34,8 +35,6 @@
    const parentOrigin = '*'
    window.frames.parent.postMessage(JSON.stringify(data), parentOrigin)
   }
-
-  ;('eyJhbGciOiJFUzI1NiIsImtpZCI6IjI0MjY2NGM1NDU3Y2FhYjVmNGFlNGRkNWI1ZjJkNDE4MTVkYjYyYjEiLCJ0eXAiOiJKV1QifQ.eyJhdHRlbXB0X3V1aWQiOiJjYzFlYzY1Zi1mYzU0LTQxM2ItOWE2Yi00NDIxZGUyOWY3MzgiLCJhdWQiOlsiMzlkMzJkMDktZWM4MS00M2JiLWI4YWMtODg5MTAwYTMyYzg2Il0sImV4cCI6MTc0ODM0ODI3NywiaWF0IjoxNzQ4MzQ4MTU3LCJuYmYiOjE3NDgzNDgxNTd9.CuRFRnVR-1c7a1q7bB3-OIu7eW4forIHh5VivQpV1Ko1m17OQRA3HavZa9JX4a93abuwnwPWJvwRWMmk2G12-g')
 
   const redirectByCode = (code) => {
    const authState = 'auth-new'
