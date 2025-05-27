@@ -13,6 +13,7 @@
 
   const registerEventsHandler = () => {
    window.addEventListener('message', (event) => {
+    console.log(event)
     if (event.data.type === authCodeResponse.type && event.data.data?.code) {
      console.log('code', event.data.data.code)
      redirectByCode(event.data.data.code)
