@@ -41,15 +41,11 @@
     'login:oauth2:5fa49fe1-b5ab-4353-8980-729359f30a30',
     JSON.stringify({ expires: Date.now() + 180000 })
    )
-   const url = `https://x53sqps7wfbau.mi.elma365.ru/_oauth2/post-message?provider=5fa49fe1-b5ab-4353-8980-729359f30a30&scope=email.read+phone.read&state=at_iframe&code=${code}&at_iframe=true`
-   window.location.href = url
+   const url = `https://test.mi.elma365.ru/_oauth2/post-message?provider=5fa49fe1-b5ab-4353-8980-729359f30a30&scope=email.read+phone.read&state=at_iframe&code=${code}&at_iframe=true`
 
-   //    window.history.pushState(authState, '', url)
-   try {
-    window.history.go(authState)
-   } catch (err) {
-    console.log(err)
-   }
+   window.history.pushState(authState, '', url)
+
+   window.history.go(authState)
   }
 
   const initRequest = {
