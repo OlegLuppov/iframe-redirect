@@ -35,6 +35,8 @@
    window.frames.parent.postMessage(JSON.stringify(data), parentOrigin)
   }
 
+  ;('eyJhbGciOiJFUzI1NiIsImtpZCI6IjI0MjY2NGM1NDU3Y2FhYjVmNGFlNGRkNWI1ZjJkNDE4MTVkYjYyYjEiLCJ0eXAiOiJKV1QifQ.eyJhdHRlbXB0X3V1aWQiOiI0YWU4ZjNlZC1hYTQzLTQ0ZTAtOGFkZC0yMjc4NGUwM2RjZGEiLCJhdWQiOlsiMzlkMzJkMDktZWM4MS00M2JiLWI4YWMtODg5MTAwYTMyYzg2Il0sImV4cCI6MTc0ODM0ODA5MSwiaWF0IjoxNzQ4MzQ3OTcxLCJuYmYiOjE3NDgzNDc5NzF9.xRkg68hSDwdASLsBYx0nw8F9JDlSQGeNXegIY8f8kYu7oc2ow129aDkkGQshyDiqG7HlAlJE4RNgrJEHfjrbRw')
+
   const redirectByCode = (code) => {
    const authState = 'auth-new'
    sessionStorage.setItem(
