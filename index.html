@@ -35,7 +35,7 @@
    window.frames.parent.postMessage(JSON.stringify(data), parentOrigin)
   }
 
-  ;('eyJhbGciOiJFUzI1NiIsImtpZCI6IjI0MjY2NGM1NDU3Y2FhYjVmNGFlNGRkNWI1ZjJkNDE4MTVkYjYyYjEiLCJ0eXAiOiJKV1QifQ.eyJhdHRlbXB0X3V1aWQiOiI0YWU4ZjNlZC1hYTQzLTQ0ZTAtOGFkZC0yMjc4NGUwM2RjZGEiLCJhdWQiOlsiMzlkMzJkMDktZWM4MS00M2JiLWI4YWMtODg5MTAwYTMyYzg2Il0sImV4cCI6MTc0ODM0ODA5MSwiaWF0IjoxNzQ4MzQ3OTcxLCJuYmYiOjE3NDgzNDc5NzF9.xRkg68hSDwdASLsBYx0nw8F9JDlSQGeNXegIY8f8kYu7oc2ow129aDkkGQshyDiqG7HlAlJE4RNgrJEHfjrbRw')
+  ;('eyJhbGciOiJFUzI1NiIsImtpZCI6IjI0MjY2NGM1NDU3Y2FhYjVmNGFlNGRkNWI1ZjJkNDE4MTVkYjYyYjEiLCJ0eXAiOiJKV1QifQ.eyJhdHRlbXB0X3V1aWQiOiJjYzFlYzY1Zi1mYzU0LTQxM2ItOWE2Yi00NDIxZGUyOWY3MzgiLCJhdWQiOlsiMzlkMzJkMDktZWM4MS00M2JiLWI4YWMtODg5MTAwYTMyYzg2Il0sImV4cCI6MTc0ODM0ODI3NywiaWF0IjoxNzQ4MzQ4MTU3LCJuYmYiOjE3NDgzNDgxNTd9.CuRFRnVR-1c7a1q7bB3-OIu7eW4forIHh5VivQpV1Ko1m17OQRA3HavZa9JX4a93abuwnwPWJvwRWMmk2G12-g')
 
   const redirectByCode = (code) => {
    const authState = 'auth-new'
@@ -43,7 +43,7 @@
     'login:oauth2:5fa49fe1-b5ab-4353-8980-729359f30a30',
     JSON.stringify({ expires: Date.now() + 180000 })
    )
-   const url = `https://test.mi.elma365.ru/_oauth2/post-message?provider=5fa49fe1-b5ab-4353-8980-729359f30a30&scope=email.read+phone.read&state=at_iframe&code=${code}&at_iframe=true`
+   const url = `/_oauth2/post-message?provider=5fa49fe1-b5ab-4353-8980-729359f30a30&scope=email.read+phone.read&state=at_iframe-test&code=${code}&at_iframe=true`
 
    window.history.pushState(authState, '', url)
 
