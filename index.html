@@ -13,7 +13,6 @@
 
   const registerEventsHandler = () => {
    window.addEventListener('message', (event) => {
-    console.log(event)
     if (event.data.type === authCodeResponse.type && event.data.data?.code) {
      console.log('code', event.data.data.code)
      redirectByCode(event.data.data.code)
@@ -42,11 +41,15 @@
     'login:oauth2:5fa49fe1-b5ab-4353-8980-729359f30a30',
     JSON.stringify({ expires: Date.now() + 180000 })
    )
-   const url = `/_oauth2/post-message?provider=5fa49fe1-b5ab-4353-8980-729359f30a30&scope=email.read+phone.read&state=at_iframe&code=${code}&at_iframe=true`
+   const url = `https://test.mi.elma365.ru/_oauth2/post-message?provider=5fa49fe1-b5ab-4353-8980-729359f30a30&scope=email.read+phone.read&state=at_iframe&code=${code}&at_iframe=true`
    window.location.href = url
 
    //    window.history.pushState(authState, '', url)
-   window.history.go(authState)
+   try {
+    window.history.go(authState)
+   } catch (err) {
+    console.log(err)
+   }
   }
 
   const initRequest = {
