@@ -8,8 +8,8 @@ const boot = () => {
 
 const registerEventsHandler = () => {
 	window.addEventListener('message', (event) => {
-		console.log(event)
 		if (event.data.type === authCodeResponse.type && event.data.data?.code) {
+			console.log('code', event.data.data?.code)
 			redirectByCode(event.data.data.code)
 		} else if (event.data.type === authCodeError.type) {
 			const errorText = 'Ошибка авторизации: ' + (event.data.error?.message || 'Неизвестная ошибка')
